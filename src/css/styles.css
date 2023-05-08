@@ -70,7 +70,10 @@ h5 {
   color: #ffffff !important;
 }
 
-.navbar-nav li a:hover,
+.navbar-nav li a:hover {
+  color: #fff !important;
+  background-color: #202572 !important;
+}
 .navbar-nav li.active a {
   color: #fff !important;
   /* background-color: #202572 !important; */
