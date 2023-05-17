@@ -21,7 +21,7 @@ const NewsSec = () => {
                         </div>
 
                     <ul>
-                        <li style={{color:"blue"}} >[08 May 2023] <a href={inaugrationImg}>Wadla3.0 coming soon</a> </li>
+                        <li style={{color:"blue"}} >[09 May 2023] <a href={inaugrationImg}>Wadla3.0 coming soon</a> </li>
                         {/* <li style={{color:"blue"}} >[19 Feb 2022] <a
                             href="https://drive.google.com/file/d/1Lt72ld0raUoz7dDRQyra-p8a7m-p3An-/view?usp=sharing">Final
                             Program Schedule</a> is now posted!</li> */}

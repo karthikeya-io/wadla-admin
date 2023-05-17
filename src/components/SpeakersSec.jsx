@@ -28,6 +28,22 @@ import MrPrantikSen from '../assets/images/speakers/all/Prantik.jpg'
 import DrShabber from '../assets/images/speakers/all/shabbir.jfif'
 
 
+import ProfCChandra from '../assets/images/speakers/all/cc_IITM.png'
+import ProfBKrishna from '../assets/images/speakers/all/bkm.jpg'
+import ProfCVJawahar from '../assets/images/speakers/all/JAWAHAR.jpg'
+import ProfSumantra from '../assets/images/speakers/all/sumantra.jpg'
+import ProfGanesh from '../assets/images/speakers/all/ganeshramakrishnan.png'
+import ProfBSDayasagar from '../assets/images/speakers/all/Sagar_2015.jpg'
+import ProfSridharan from '../assets/images/speakers/all/sridhar.png'
+
+import DrVineeth from "../assets/images/speakers/all/Vineeth_N_Balasubramanian.jpg"
+import DrRajiv from "../assets/images/speakers/all/rajiv.png"
+import DrAnand from "../assets/images/speakers/all/anand_mishra.jpg"
+import DrPratha from "../assets/images/speakers/all/Partha.jpeg"
+import DrSriparna from "../assets/images/speakers/all/sriparna.jpg"
+import DrAnish from "../assets/images/speakers/all/anand.jpeg"
+import DrArjith from "../assets/images/speakers/all/Arijit.jpg"
+import DrMurali from "../assets/images/speakers/all/subbumurala.jpg"
 
 const SpeakersSec = () => {
 
@@ -241,6 +257,126 @@ const SpeakersSec = () => {
   ]
 
   const academicNational = [
+    {
+      name: "Prof. C. Chandra Sekhar",
+      img: ProfCChandra,
+      link: "http://www.cse.iitm.ac.in/profile.php?arg=Nw==",
+      university: "IIT Madras",
+      designation: "(HoD)",
+      center: false
+    },
+    {
+      name: "Prof. B Krishna Mohan",
+      img: ProfBKrishna,
+      link: "http://www.csre.iitb.ac.in/bkmohan/",
+      university: "IIT Bombay",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Prof. C. V. Jawahar",
+      img: ProfCVJawahar,
+      link: "https://faculty.iiit.ac.in/~jawahar/",
+      university: "IIIT Hyderabad",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Prof. Sumantra Dutta Roy",
+      img: ProfSumantra,
+      link: "https://www.cse.iitd.ac.in/~sumantra/",
+      university: "IIT Delhi",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Prof. Ganesh Ramakrishnan",
+      img: ProfGanesh,
+      link: "https://www.cse.iitb.ac.in/~ganesh/",
+      university: "IIT Bombay",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Prof. B S Dayasagar",
+      img: ProfBSDayasagar,
+      link: "https://www.isibang.ac.in/~bsdsagar/",
+      university: "ISI Bangalore",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Sridharan Devarajan",
+      img: ProfSridharan,
+      link: "http://www.cns.iisc.ac.in/home/people/sridharan-devarajan/",
+      university: "IISc Bangalore",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Vineeth N Balasubramanian", 
+      img: DrVineeth,
+      link: "https://www.iith.ac.in/~vineethnb/",
+      university: "IIT Hyderabad",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Rajiv Ranjan Sahay",
+      img: DrRajiv,
+      link: "http://www.iitkgp.ac.in/department/EE/faculty/ee-rajiv",
+      university: "IIT Kharagpur",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr Anand Mishra",
+      img: DrAnand,
+      link: "https://anandmishra22.github.io/",
+      university: "IIT Jodhpur",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Partha Pratim Roy",
+      img: DrPratha,
+      link: "hhttps://www.iitr.ac.in/~CSE/Partha_Pratim_Roy",
+      university: "IIT Roorkee",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Sriparna Saha",
+      img: DrSriparna,
+      link: "https://www.iitp.ac.in/~sriparna/",
+      university: "IIT Patna",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Ashish Anand",
+      img: DrAnish,
+      link: "https://www.iitg.ac.in/anand.ashish/",
+      university: "IIT Guwahati",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Arijit Mondal",
+      img: DrArjith,
+      link: "https://www.iitrpr.ac.in/electrical/subbumurala",
+      university: "IIT Patna",
+      designation: "",
+      center: false
+    },
+    {
+      name: "Dr. Subrahmanyam Murala",
+      img: DrMurali,
+      link: "https://www.iitrpr.ac.in/electrical/subbumurala",
+      university: "IIT Ropar",
+      designation: "",
+      center: false
+    }
   ]
 
   return (
@@ -357,6 +493,55 @@ const SpeakersSec = () => {
       <div className="row  slideanim speaker-list ">
         {
           industryExpertsPrivate.map((speaker, index) => {
+          
+          return speaker.center === false? 
+          (
+            <div className="col-sm-4" key={index}>
+              <div className="speaker" id=""> <img className="thumbnail-circle"
+                src={speaker.img} alt={speaker.name} />
+                <a href={speaker.link}
+                  target="_blank">
+                  <h4> {speaker.name}
+                  </h4>
+                </a>
+                {speaker.university} {
+                      speaker.designation ? ` (${speaker.designation})` : ''
+                    }
+              </div>
+            </div>
+          )
+          :
+          (
+            <div className="row slideanim speaker-list">
+            <div className="col-sm-12 " key={index}>
+              <div className="speaker" id=""> <img className="thumbnail-circle"
+                src={speaker.img} alt={speaker.name} />
+                <a href={speaker.link}
+                  target="_blank">
+                  <h4> {speaker.name}
+                    {
+                      speaker.designation ? ` (${speaker.designation})` : ''
+                    }
+                  </h4>
+                </a>
+                {speaker.university}
+              </div>
+            </div>
+            </div>
+          )
+          }
+          )
+        }
+      </div>
+
+      <div className="row">
+        <div className="col-sm-12"> 
+          <h2 className="speakers-text"> ACADEMIC EXPERTS (NATIONAL)</h2><br />
+        </div>
+      </div>
+      <div className="row  slideanim speaker-list ">
+        {
+          academicNational.map((speaker, index) => {
           
           return speaker.center === false? 
           (
