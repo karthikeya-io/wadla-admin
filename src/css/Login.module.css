@@ -53,7 +53,7 @@
 }
 
   
-  .loginBox form a {
+  .loginBox form .submit {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -67,7 +67,7 @@
     letter-spacing: 4px
   }
   
-  .loginBox a:hover {
+  .loginBox .submit:hover {
     background: #383CC1;
     color: #fff;
     border-radius: 5px;
@@ -77,7 +77,7 @@
                 0 0 100px #383CC1;
   }
   
-  .loginBox a span {
+  .loginBox .submit span {
     position: absolute;
     display: block;
   }
@@ -92,11 +92,17 @@
     }
   }
   
-  .loginBox a span:nth-child(1) {
+  .lineAnimation {
     bottom: 2px;
     left: -100%;
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, #383CC1);
     animation: btn-anim1 2s linear infinite;
+  }
+
+  /* target input of type submit */
+  .loginBox .submit input[type="submit"] {
+    background: transparent;
+    border: none;
   }

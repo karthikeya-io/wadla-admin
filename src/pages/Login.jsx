@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import classes from "../css/Login.module.css";
 import { API_BASE_URL } from "../constants";
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
 
+  const navigate = useNavigate();
   const [formDetails, setFormDetails] = useState({ email: "", password: "" })
 
   async function postData(url = '', data = {}) {
@@ -41,22 +43,23 @@ const Login = () => {
 
   const submitHandler = async (event) => {
     event.preventDefault();
-    if (formDetails.email.length <= 0 || formDetails.password.length <= 0) {
-      alert("enter email and password")
-      return
-    }
-    postData(`${API_BASE_URL}/login`, formDetails)
-      .then((data) => {
-        if (data.user) {
-          const userData = data.user
-          localStorage.setItem("user", JSON.stringify(userData))
-        }else if(data.error) {
-          alert(data.error)
-        }
-    });
+    // if (formDetails.email.length <= 0 || formDetails.password.length <= 0) {
+    //   alert("enter email and password")
+    //   return
+    // }
+    // postData(`${API_BASE_URL}/login`, formDetails)
+    //   .then((data) => {
+    //     if (data.user) {
+    //       const userData = data.user
+    //       localStorage.setItem("user", JSON.stringify(userData))
+    //     }else if(data.error) {
+    //       alert(data.error)
+    //     }
+    // });
     
 
     setFormDetails({ email: "", password: "" });
+    navigate("/dashboard");  
 
   }
 
@@ -73,10 +76,10 @@ const Login = () => {
             <label>Password</label>
           </div>
           <center>
-            <a href="#">
-              Login
-              <span></span>
-            </a>
+            <div className={classes.submit}>
+              <input onClick={submitHandler} type="submit" value="Login" />
+              <span className={classes.lineAnimation}></span>
+            </div>
           </center>
         </form>
       </div>
