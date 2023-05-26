@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from "../../css/Admin.module.css"
+import classes from "../../css/Dashboard.module.css"
 
 const Welcome = () => {
   return (
