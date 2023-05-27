@@ -9,7 +9,7 @@
   box-shadow: 0 10px 60px rgb(218, 229, 255);
   border: 1px solid rgb(159, 159, 160);
   border-radius: 20px;
-  padding: 2rem .7rem .7rem .7rem;
+  padding: 2rem 0.7rem 0.7rem 0.7rem;
   text-align: center;
   font-size: 1.125rem;
   max-width: 320px;
@@ -41,7 +41,7 @@
   border: 2px dashed rgb(171, 202, 255);
   color: #444;
   cursor: pointer;
-  transition: background .2s ease-in-out, border .2s ease-in-out;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
 .dropContainer:hover {
@@ -58,7 +58,7 @@
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .fileInput {
@@ -79,7 +79,7 @@
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
-  transition: background .2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 
 .fileInput::file-selector-button:hover {
@@ -88,4 +88,5 @@
 
 .Table {
   margin: 20px 50px;
+  width: 100%;
 }
