@@ -3,14 +3,26 @@ import BannerUpdate from "./pages/BannerUpdate";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import Speakers from "./pages/Speakers";
+import Events from "./pages/Events";
+
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="update/banner" element={<BannerUpdate />} />
+        <Route path="/" element={<Events/>} />
+        <Route path="/event/:eventId/:eventName">
+          <Route index element={<Dashboard/>} />
+          <Route path="speakers" element={<Speakers />} />
+          <Route path="banner" element={<BannerUpdate />} />
+        </Route>
+        <Route path="update" >
+          <Route index element={<Dashboard/>} />
+          <Route path="banner" element={<BannerUpdate />} />
+          <Route path="speakers" element={<Speakers />} />
+        </Route>
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
 

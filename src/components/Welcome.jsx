@@ -1,16 +1,14 @@
 import React, { useEffect } from "react";
 import classes from "../css/Dashboard.module.css";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie";
+
 
 const Welcome = ({ message }) => {
   const navigate = useNavigate();
   useEffect(() => {
-    const token = Cookies.get("token");
-    if (token && token !== "undefined") {
-      console.log("token", token);
-    } else {
-      console.log("no token");
+    const time = localStorage.getItem("timeOfLogin");
+    if (!time || Date.now() - time > 3600000) {
+      localStorage.clear();
       navigate("/login");
     }
   }, []);

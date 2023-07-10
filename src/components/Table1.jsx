@@ -1,7 +1,7 @@
 import React from "react";
 import firstBanner from "../assets/temp/first_banner.jpg";
-import inauguration from "../assets/temp/inauguration.jpeg";
-import academiaAll from "../assets/temp/Academia_all_foreign.png";
+// import inauguration from "../assets/temp/inauguration.jpeg";
+// import academiaAll from "../assets/temp/Academia_all_foreign.png";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -59,9 +59,9 @@ const Table1 = () => {
               2
             </TableCell>
             <TableCell>
-              <img height="50px" src={inauguration} alt="" />
+              <img height="50px" src={firstBanner} alt="" />
             </TableCell>
-            <TableCell>Inaugration</TableCell>
+            <TableCell>static test</TableCell>
             <TableCell>
               <Button variant="contained" color="error">
                 Delete
@@ -76,9 +76,9 @@ const Table1 = () => {
               3
             </TableCell>
             <TableCell>
-              <img height="50px" src={academiaAll} alt="" />
+              <img height="50px" src={firstBanner} alt="" />
             </TableCell>
-            <TableCell>Scheduel</TableCell>
+            <TableCell>static test</TableCell>
             <TableCell>
               <Button variant="contained" color="error">
                 Delete

@@ -2,29 +2,11 @@ import React, { useState } from "react";
 import classes from "../css/Login.module.css";
 import { API_BASE_URL } from "../constants";
 import { useNavigate } from "react-router-dom";
+import { postData } from "../utils/ApiCalls";
 
 const Login = () => {
   const navigate = useNavigate();
   const [formDetails, setFormDetails] = useState({ email: "", password: "" });
-
-  async function postData(url = "", data = {}) {
-    // Default options are marked with *
-    const response = await fetch(url, {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "include", // include, *same-origin, omit
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-  }
 
   const changeHandler = (event) => {
     let name = event.target.name;
@@ -42,17 +24,23 @@ const Login = () => {
       alert("enter email and password");
       return;
     }
-    postData(`${API_BASE_URL}/login`, formDetails).then((data) => {
-      console.log(data);
-      if (data.admin) {
-        const userData = data.admin;
-        localStorage.setItem("user", JSON.stringify(userData));
-        setFormDetails({ email: "", password: "" });
-        navigate("/");
-      } else if (data.error) {
-        alert(data.error);
-      }
-    });
+    postData(`${API_BASE_URL}/login`, formDetails)
+      .then((data) => {
+        console.log(data);
+        if (data.admin) {
+          const userData = data.admin;
+          localStorage.setItem("user", JSON.stringify(userData));
+          localStorage.setItem("token", data.token);
+          localStorage.setItem("timeOfLogin", Date.now());
+          setFormDetails({ email: "", password: "" });
+          navigate("/");
+        } else if (data.error) {
+          alert(data.error);
+        }
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   return (
