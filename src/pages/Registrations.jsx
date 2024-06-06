@@ -113,6 +113,7 @@ const Registrations = () => {
                       <TableCell>Affiliation</TableCell>
                       <TableCell>Designation</TableCell>
                       <TableCell>Email</TableCell>
+                      <TableCell>Mode</TableCell>
                       <TableCell>Transaction Number</TableCell>
                       <TableCell>Amount Paid</TableCell>
                       <TableCell>Paid On</TableCell>
@@ -136,6 +137,7 @@ const Registrations = () => {
                           <TableCell>{user.affiliation}</TableCell>
                           <TableCell>{user.designation}</TableCell>
                           <TableCell>{user.email}</TableCell>
+                          <TableCell>{user.mode}</TableCell>
                           <TableCell>{user.transactionNumber}</TableCell>
                           <TableCell>{user.registrationFee}</TableCell>
                           <TableCell>
